@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: aggregator-service
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: aggregator-service
+    spec:
+      containers:
+      - name: aggregator-service
+        image: duyushui/aggregator-service:latest
+        ports:
+        - containerPort: 8080
